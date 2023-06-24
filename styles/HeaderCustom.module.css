@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navigationBar {
+    display: flex;
+    gap: 2rem;
+}
+
+.imageContainer {
+    display: flex;
+}

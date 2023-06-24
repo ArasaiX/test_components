@@ -1,0 +1,111 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.title {
+    color: white;
+    cursor: pointer;
+    -webkit-transition: background-color  2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+    transition: opacity 0.3s ease;
+}
+
+.title:hover {
+    opacity: 0;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    -webkit-transition: background-color  2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+}
+
+.text {
+    color: #9A1B1B;
+    font-size: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: white;
+    font-weight: bold;
+}
+
+.boxCard:hover .text {
+    color: black;
+    animation: rotateAnimation 1s forwards;
+}
+
+.boxCard:not(:hover) .text {
+    animation: rotateBackAnimation 1s forwards;
+}
+
+.boxCardFixed {
+    position: relative;
+    border: 3px solid white;
+    border-radius: 5px;
+    width: 20em;
+    height: 20em;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+    text-align: center;
+    background-color: white;
+}
+
+.boxCard {
+    position: relative;
+    border: 3px solid white;
+    border-radius: 5px;
+    width: 20em;
+    height: 20em;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+    text-align: center;
+    transition: transform 5s ease-in-out;
+    background-color: black;
+}
+
+.boxCard:hover {
+    background-color: white;
+    color: white;
+    cursor: pointer;
+    -webkit-transition: background-color  2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+    animation: rotateAnimation 1s forwards;
+}
+
+@keyframes rotateAnimation {
+    from {
+    transform: rotateY(0);
+    background-image: none; /* Elimina la imagen de fondo en la posición inicial */
+    }
+    to {
+    transform: rotateY(180deg);
+    background-image: url("/path/to/image.jpg"); /* Establece la imagen de fondo en la posición final */
+    }
+}
+
+.boxCard:not(:hover) {
+    animation: rotateBackAnimation 2s forwards;
+}
+
+@keyframes rotateBackAnimation {
+    from {
+    transform: rotateY(180deg);
+    }
+    to {
+    transform: rotateY(0);
+    }
+}
